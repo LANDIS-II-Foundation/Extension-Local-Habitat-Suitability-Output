@@ -206,3 +206,18 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+src/lib/Landis.Library.Metadata-v2.dll
+src/lib/Landis.Library.Parameters-v2.dll
+src/lib/Landis.Library.UniversalCohorts-v1.dll
+test/Core8-LocalHabitat3.0/Biomass-succession-log.csv
+/test/Core8-LocalHabitat3.0/biomass-succession
+test/Core8-LocalHabitat3.0/Climate-annual-log.csv
+test/Core8-LocalHabitat3.0/Climate-future-input-log.csv
+test/Core8-LocalHabitat3.0/Climate-spinup-input-log.csv
+test/Core8-LocalHabitat3.0/fire/original-fire-log.csv
+/test/Core8-LocalHabitat3.0/fire
+/test/Core8-LocalHabitat3.0/harvest
+test/Core8-LocalHabitat3.0/Landis-climate-log.txt
+test/Core8-LocalHabitat3.0/Landis-log.txt
+/test/Core8-LocalHabitat3.0/Metadata
+/test/Core8-LocalHabitat3.0/output

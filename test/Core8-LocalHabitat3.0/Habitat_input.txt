@@ -1,0 +1,16 @@
+LandisData  "Local Habitat Output"
+
+Timestep  1
+
+OutputTimestep  10
+
+MapFileNames	output/habitat/{HabitatName}-{timestep}.img
+
+
+SuitabilityFiles  	AgeClass_ForestType_example.txt
+			AgeClass_TimeSinceFire_example.txt
+			ForestType_TimeSinceFire_example.txt
+			ForestType_TimeSinceHarvest_example.txt
+
+
+			

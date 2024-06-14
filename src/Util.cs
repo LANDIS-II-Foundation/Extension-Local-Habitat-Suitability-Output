@@ -1,5 +1,5 @@
 
-using Landis.Library.BiomassCohorts;
+using Landis.Library.UniversalCohorts;
 
 
 namespace Landis.Extension.Output.LocalHabitat
@@ -14,7 +14,7 @@ namespace Landis.Extension.Output.LocalHabitat
             int total = 0;
             if (cohorts != null)
                 foreach (ICohort cohort in cohorts)
-                    total += cohort.Biomass;
+                    total += cohort.Data.Biomass;
             return total;
         }
 
