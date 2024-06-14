@@ -1,4 +1,4 @@
-
+using Landis.Library.UniversalCohorts;
 using Landis.SpatialModeling;
 using System.Collections.Generic;
 
@@ -6,8 +6,7 @@ namespace Landis.Extension.Output.LocalHabitat
 {
     public static class SiteVars
     {
-        private static ISiteVar<Landis.Library.BiomassCohorts.ISiteCohorts> biomassCohorts;
-        private static ISiteVar<Landis.Library.AgeOnlyCohorts.ISiteCohorts> ageCohorts;
+        private static ISiteVar<ISiteCohorts> universalCohorts;
 
         private static ISiteVar<string> prescriptionName;
         private static ISiteVar<byte> fireSeverity;
@@ -33,8 +32,7 @@ namespace Landis.Extension.Output.LocalHabitat
 
         public static void Initialize(int suitabilityCount)
         {
-            biomassCohorts = PlugIn.ModelCore.GetSiteVar<Landis.Library.BiomassCohorts.ISiteCohorts>("Succession.BiomassCohorts");
-            ageCohorts = PlugIn.ModelCore.GetSiteVar<Landis.Library.AgeOnlyCohorts.ISiteCohorts>("Succession.AgeCohorts");
+            universalCohorts = PlugIn.ModelCore.GetSiteVar<ISiteCohorts>("Succession.UniversalCohorts");
             prescriptionName = PlugIn.ModelCore.GetSiteVar<string>("Harvest.PrescriptionName");
             timeOfLastHarvest = PlugIn.ModelCore.GetSiteVar<int>("Harvest.TimeOfLastEvent");
             fireSeverity = PlugIn.ModelCore.GetSiteVar<byte>("Fire.Severity");
@@ -54,7 +52,7 @@ namespace Landis.Extension.Output.LocalHabitat
             suitabilityWeight = PlugIn.ModelCore.Landscape.NewSiteVar<Dictionary<int, double>>();
 
 
-            if (biomassCohorts == null && ageCohorts == null)
+            if (universalCohorts == null)
             {
                 string mesg = string.Format("Cohorts are empty.  Please double-check that this extension is compatible with your chosen succession extension.");
                 throw new System.ApplicationException(mesg);
@@ -132,19 +130,11 @@ namespace Landis.Extension.Output.LocalHabitat
         }
        
         //---------------------------------------------------------------------
-        public static ISiteVar<Landis.Library.BiomassCohorts.ISiteCohorts> BiomassCohorts
+        public static ISiteVar<ISiteCohorts> UniversalCohorts
         {
             get
             {
-                return biomassCohorts;
-            }
-        }
-        //---------------------------------------------------------------------
-        public static ISiteVar<Landis.Library.AgeOnlyCohorts.ISiteCohorts> AgeCohorts
-        {
-            get
-            {
-                return ageCohorts;
+                return universalCohorts;
             }
         }
         //---------------------------------------------------------------------
