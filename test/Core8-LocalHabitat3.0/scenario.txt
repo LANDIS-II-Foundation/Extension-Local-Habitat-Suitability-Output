@@ -1,28 +1,51 @@
-LandisData  Scenario
-
-Duration  50
-
-Species   species_s2e1.txt
-
-Ecoregions      ./ecoregions_s2e1.txt
-EcoregionsMap   ./ecoregions_s2e1.gis
-
-CellLength  100 << meters, 100 x 100 m = 1 ha
+LandisData  "Scenario"
 
 
->> NOTE:  This example assumes that you have downloaded and installed 
->> the correpsonding extensions.  These extensions are currently packaged
->> together as a package.
+>> ---------------------------------------------
+>> DEFINING A SCENARIO FOR A SINGLE LANDIS-II RUN
+>>----------------------------------------------
 
->> Succession Extension     Initialization File
->> --------------------     -------------------
-   "Biomass Succession"    biomass-succession.txt
+>>	1. Provide the Required Inputs
+>>	2. Select ONE Succession Extension
+>>	3. Select ONE OR MORE Disturbance Extensions (but only ONE harvest extension)
+>>	4. Select ONE OR MORE (compatible) Output Extensions
+
+>>	A selection is made active by uncommenting a line (ie, remove the >> symbols) 
 
 
->> Disturbance Extensions   Initialization File
->> ----------------------   -------------------
+
+>>-------------------
+>> REQUIRED INPUTS
+>>-------------------
+
+Duration  	50
+
+Species   	Core_species_data.txt
+
+Ecoregions      ./ecoregions.txt
+EcoregionsMap   ./ecoregions.tif
+
+CellLength  	100 << meters, 100 x 100 m = 1 ha
+
+
+
+>> -----------------------
+>> SUCCESSION EXTENSIONS
+>> -----------------------
+
+>> 	Succession Extension     Initialization File
+>> 	--------------------     -------------------
+	"Biomass Succession"	biomass-succession.txt
+
+
+>> --------------------------
+>> DISTURBANCE EXTENSIONS
+>> -------------------------
+
+>> 	Disturbance Extension	Initialization File
+>>	--------------------	-------------------
   "Original Fire"	    "original-fire-6.0.txt"
-  "Biomass Harvest"	    "biomass-harvest_SetUp_s2e1.txt"
+  "Biomass Harvest"	    "harvest_SetUp.txt"
 
 >>   DisturbancesRandomOrder  yes  << optional parameter; default = no
 
@@ -30,8 +53,10 @@ CellLength  100 << meters, 100 x 100 m = 1 ha
 >> Other Extensions         Initialization File
 >> ----------------         -------------------
    "Local Habitat Output"  Habitat_input.txt
->>   "Output Biomass Reclass"   BRMoutput-biomass-reclass.txt 
 
 
->>RandomNumberSeed  4,357  << optional parameter; default = the seed is
-                         << randomly generated using the current time
+
+>> RandomNumberSeed  147  << optional parameter; uncomment for reproducibilty tests
+                          << Commented (default) is a RandomNumberSeed generated using the current time
+
+

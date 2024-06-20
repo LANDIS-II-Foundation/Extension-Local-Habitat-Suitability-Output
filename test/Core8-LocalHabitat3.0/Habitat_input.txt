@@ -4,7 +4,7 @@ Timestep  1
 
 OutputTimestep  10
 
-MapFileNames	output/habitat/{HabitatName}-{timestep}.img
+MapFileNames	output/habitat/{HabitatName}-{timestep}.tif
 
 
 SuitabilityFiles  	AgeClass_ForestType_example.txt
