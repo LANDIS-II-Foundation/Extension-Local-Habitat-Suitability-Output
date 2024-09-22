@@ -413,10 +413,10 @@ namespace Landis.Extension.Output.LocalHabitat
             {
                 double sppValue = 0.0;
 
-                if (SiteVars.UniversalCohorts[site] == null)
+                if (SiteVars.Cohorts[site] == null)
                     break;
 
-                sppValue = Util.ComputeBiomass(SiteVars.UniversalCohorts[site][species]);
+                sppValue = Util.ComputeBiomass(SiteVars.Cohorts[site][species]);
 
                 forTypeCnt = 0;
                 foreach(IForestType ftype in forestTypes)
@@ -460,7 +460,7 @@ namespace Landis.Extension.Output.LocalHabitat
             double[] forTypValue = new double[forestTypes.Count];
             foreach (ISpecies species in PlugIn.ModelCore.Species)
             {
-                if (SiteVars.UniversalCohorts[site] != null)
+                if (SiteVars.Cohorts[site] != null)
                 {
                     ushort maxSpeciesAge = 0;
                     double sppValue = 0.0;
@@ -513,9 +513,9 @@ namespace Landis.Extension.Output.LocalHabitat
             if (!site.IsActive)
                 return 0;
             ushort max = 0;
-            if (SiteVars.UniversalCohorts[site] == null)
+            if (SiteVars.Cohorts[site] == null)
             {
-                if (SiteVars.UniversalCohorts[site] == null)
+                if (SiteVars.Cohorts[site] == null)
                 {
                     PlugIn.ModelCore.UI.WriteLine("Cohort are null.");
                     return 0;
@@ -523,7 +523,7 @@ namespace Landis.Extension.Output.LocalHabitat
                 else
                 {
                     max = 0;
-                    foreach (ISpeciesCohorts sppCohorts in SiteVars.UniversalCohorts[site])
+                    foreach (ISpeciesCohorts sppCohorts in SiteVars.Cohorts[site])
                     {
                         if (sppCohorts.Species == spp)
                         {
@@ -539,7 +539,7 @@ namespace Landis.Extension.Output.LocalHabitat
             {
                 max = 0;
 
-                foreach (ISpeciesCohorts sppCohorts in SiteVars.UniversalCohorts[site])
+                foreach (ISpeciesCohorts sppCohorts in SiteVars.Cohorts[site])
                 {
                     if (sppCohorts.Species == spp)
                     {
@@ -559,7 +559,7 @@ namespace Landis.Extension.Output.LocalHabitat
         public static void UpdateDominantAge( Site site)
         {
             int domAge = 0;
-            if (SiteVars.UniversalCohorts[site] == null)
+            if (SiteVars.Cohorts[site] == null)
             {
                 domAge = CalculateDomAgeAgeOnly(site);
             }
@@ -578,7 +578,7 @@ namespace Landis.Extension.Output.LocalHabitat
             foreach (IMapDefinition map in suitabilityParameters.ForestTypes)
             {
                 List<IForestType> forestTypes = map.ForestTypes;
-                if (SiteVars.UniversalCohorts[site] == null)
+                if (SiteVars.Cohorts[site] == null)
                 {
                     forTypeIndex = CalcForestTypeAge(forestTypes, site, reclassCoeffs);
                 }
@@ -603,7 +603,7 @@ namespace Landis.Extension.Output.LocalHabitat
                 speciesIndex++;
             }
             Dictionary<int, int> ageDictionary = new Dictionary<int, int>();
-            foreach (ISpeciesCohorts sppCohorts in SiteVars.UniversalCohorts[site])
+            foreach (ISpeciesCohorts sppCohorts in SiteVars.Cohorts[site])
             {
                 if (speciesList.Contains(sppCohorts.Species))
                 {
@@ -639,7 +639,7 @@ namespace Landis.Extension.Output.LocalHabitat
         {
 
             Dictionary<int, int> ageDictionary = new Dictionary<int, int>();
-            foreach (ISpeciesCohorts sppCohorts in SiteVars.UniversalCohorts[site])
+            foreach (ISpeciesCohorts sppCohorts in SiteVars.Cohorts[site])
             {
                 foreach (ICohort cohort in sppCohorts)
                 {
@@ -671,7 +671,7 @@ namespace Landis.Extension.Output.LocalHabitat
         public static int CalculateDomAgeAgeOnly(Site site)
         {
             Dictionary<int, int> ageDictionary = new Dictionary<int, int>();
-            foreach (ISpeciesCohorts sppCohorts in SiteVars.UniversalCohorts[site])
+            foreach (ISpeciesCohorts sppCohorts in SiteVars.Cohorts[site])
             {
                 foreach (ICohort cohort in sppCohorts)
                 {

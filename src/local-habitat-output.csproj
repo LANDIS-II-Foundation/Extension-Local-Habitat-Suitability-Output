@@ -2,27 +2,27 @@
 
   <PropertyGroup>
     <RootNamespace>Landis.Extension.Output.LocalHabitat</RootNamespace>
-    <AssemblyName>Landis.Extension.Output.LocalHabitat-v3</AssemblyName>
-    <AssemblyTitle>Landis.Extension.Output.LocalHabitat-v2</AssemblyTitle>
-    <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
-    <AssemblyProduct>Landis.Extension.Output.LocalHabitat-v2</AssemblyProduct>
-    <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
+	  <AssemblyCompany>Landis-II-Foundation</AssemblyCompany>
+	  <AssemblyProduct>Landis.Extension.Output.LocalHabitat-v3</AssemblyProduct>
+	  <AssemblyCopyright>Landis-II-Foundation</AssemblyCopyright>
+	  <AssemblyName>Landis.Extension.Output.LocalHabitat-v3</AssemblyName>
+    <AssemblyTitle>Landis.Extension.Output.LocalHabitat-v3</AssemblyTitle>
     <AssemblyVersion>3.0</AssemblyVersion>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	  <Version>3.0</Version>
+	  <FileVersion>3.0</FileVersion>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <Product>Landis.Extension.Output.LocalHabitat-v3</Product>
+	  <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/LANDIS-II-Foundation/Extension-Local-Habitat-Suitability-Output</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseUrl>https://github.com/LANDIS-II-Foundation/Extension-Local-Habitat-Suitability-Output/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>http://www.landis-ii.org</PackageProjectUrl>
     <NeutralLanguage>English</NeutralLanguage>
-    <Authors>Landis-II-Foundation</Authors>
-    <Product>Landis.Extension.Output.LocalHabitat-v2</Product>
-    <Copyright>Landis-II-Foundation</Copyright>
-    <Version>3.0</Version>
+    <Authors>Landis-II Foundation</Authors>
+    <Copyright>Landis-II Foundation</Copyright>
     <PackageTags>LANDIS-II;Landis;Extension;Habitat</PackageTags>
-    <Description>Output Habitat Extension</Description>
-    <PackageReleaseNotes>.NET Standard 2.0 update</PackageReleaseNotes>
-    <FileVersion>3.0</FileVersion>
+    <Description>Output Local Habitat Extension</Description>
+    <PackageReleaseNotes>LANDIS-II v8 update</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

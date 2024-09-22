@@ -6,7 +6,7 @@ namespace Landis.Extension.Output.LocalHabitat
 {
     public static class SiteVars
     {
-        private static ISiteVar<ISiteCohorts> universalCohorts;
+        private static ISiteVar<SiteCohorts> cohorts;
 
         private static ISiteVar<string> prescriptionName;
         private static ISiteVar<byte> fireSeverity;
@@ -32,7 +32,7 @@ namespace Landis.Extension.Output.LocalHabitat
 
         public static void Initialize(int suitabilityCount)
         {
-            universalCohorts = PlugIn.ModelCore.GetSiteVar<ISiteCohorts>("Succession.UniversalCohorts");
+            cohorts = PlugIn.ModelCore.GetSiteVar<SiteCohorts>("Succession.UniversalCohorts");
             prescriptionName = PlugIn.ModelCore.GetSiteVar<string>("Harvest.PrescriptionName");
             timeOfLastHarvest = PlugIn.ModelCore.GetSiteVar<int>("Harvest.TimeOfLastEvent");
             fireSeverity = PlugIn.ModelCore.GetSiteVar<byte>("Fire.Severity");
@@ -52,11 +52,11 @@ namespace Landis.Extension.Output.LocalHabitat
             suitabilityWeight = PlugIn.ModelCore.Landscape.NewSiteVar<Dictionary<int, double>>();
 
 
-            if (universalCohorts == null)
-            {
-                string mesg = string.Format("Cohorts are empty.  Please double-check that this extension is compatible with your chosen succession extension.");
-                throw new System.ApplicationException(mesg);
-            }
+            //if (cohorts == null)
+            //{
+            //    string mesg = string.Format("Cohorts are empty.  Please double-check that this extension is compatible with your chosen succession extension.");
+            //    throw new System.ApplicationException(mesg);
+            //}
 
             foreach (Site site in PlugIn.ModelCore.Landscape.ActiveSites)
             {
@@ -130,11 +130,11 @@ namespace Landis.Extension.Output.LocalHabitat
         }
        
         //---------------------------------------------------------------------
-        public static ISiteVar<ISiteCohorts> UniversalCohorts
+        public static ISiteVar<SiteCohorts> Cohorts
         {
             get
             {
-                return universalCohorts;
+                return cohorts;
             }
         }
         //---------------------------------------------------------------------
